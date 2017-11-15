@@ -1,0 +1,35 @@
+//
+//  Clutch-SL.pch
+//  Clutch-SL
+//
+//  Created by 曾祥翔 on 2017/11/15.
+//  Copyright © 2017年 曾祥翔. All rights reserved.
+//
+
+#ifndef Clutch_SL_pch
+#define Clutch_SL_pch
+#import "ClutchPrint.h"
+
+
+
+//默认存储解密文件的目录
+#define DEFAULTPATH @"/var/tmp/clutch"
+
+
+/*
+ floor函数：
+    原型：double floor(double)
+    功能：“向下取整”,返回不大于参数的最大整数
+ */
+//判断系统版本是否和参数一样
+#define SYSTEM_VERSION_EQUAL_TO(_v)                  ( floor(NSFoundationVersionNumber) == _v ? YES : NO )
+//判断系统版本是否大于参数
+#define SYSTEM_VERSION_GREATER_THAN(_v)              ( floor(NSFoundationVersionNumber) >  _v ? YES : NO )
+//判断系统版本是否是否大于等于参数
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(_v)  ( floor(NSFoundationVersionNumber) >= _v ? YES : NO )
+//判断系统版本是否小于参数
+#define SYSTEM_VERSION_LESS_THAN(_v)                 ( floor(NSFoundationVersionNumber) <  _v ? YES : NO )
+//判断系统版本是否是否小于等于参数
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(_v)     ( floor(NSFoundationVersionNumber) <= _v ? YES : NO )
+
+#endif /* Clutch_SL_pch */

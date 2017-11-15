@@ -25,7 +25,7 @@
     static dispatch_once_t onceToken;
     static ClutchPrint *shared = nil;
     dispatch_once(&onceToken, ^{
-        shared = [[self alloc] initWithColorLevel:ClutchPrinterColorLevelNone verboseLevel:ClutchPrinterVerboseLevelNone];
+        shared = [[ClutchPrint alloc] initWithColorLevel:ClutchPrinterColorLevelNone verboseLevel:ClutchPrinterVerboseLevelNone];
     });
     return shared;
 }
@@ -49,13 +49,16 @@
     colorLevel = colorLev;
 }
 
-
+    
+/*
+ 巨坑：之前把格式化字符串转成一个nsstring时，写错了初始化函数。一直报错：Segmentation fault: 11
+ */
 -(void)print:(NSString *)format, ...{
     //如果format不为空，则用参数列表获取参数
     if (format != nil) {
         va_list args;
         va_start(args, format);
-        NSString *formatString = [[NSString alloc] initWithFormat:format,args];
+        NSString *formatString = [[NSString alloc] initWithFormat:format arguments:args];
         NSString *printString = [NSString stringWithFormat:@"%@\n",formatString];
         printf("%s",printString.UTF8String);
         va_end(args);
@@ -77,7 +80,7 @@
             
             va_list args;
             va_start(args, format);
-            NSString *formatString = [[NSString alloc] initWithFormat:format,args];
+            NSString *formatString = [[NSString alloc] initWithFormat:format arguments:args];
             NSString *printString = [NSString stringWithFormat:@"%@ | %@\n",stackSymbols[3],formatString];
             printf("%s",printString.UTF8String);
             va_end(args);
@@ -92,7 +95,7 @@
         va_list args;
         va_start(args, format);
         
-        NSString *formatString = [[NSString alloc] initWithFormat:format,args];
+        NSString *formatString = [[NSString alloc] initWithFormat:format arguments:args];
         NSString *printString = [NSString stringWithFormat:@"Error:%@\n",formatString];
         [self printColor:ClutchPrinterColorRed format:@"%@",printString];
     }
@@ -103,7 +106,7 @@
     if (format != nil) {
         va_list args;
         va_start(args, format);
-        NSString *formatString = [[NSString alloc] initWithFormat:format    ,args];
+        NSString *formatString = [[NSString alloc] initWithFormat:format    arguments:args];
         NSString *printString;
         if (colorLevel == ClutchPrinterVerboseLevelNone) {
             printString = [NSString stringWithFormat:@"%@\n",formatString];
@@ -132,7 +135,7 @@
     }
 }
 
-
+//详细输出
 - (void)printVerbose:(NSString *)format, ...
 {
     if (verboseLevel == ClutchPrinterVerboseLevelDeveloper || verboseLevel == ClutchPrinterVerboseLevelFull)
@@ -141,10 +144,8 @@
         {
             va_list args;
             va_start(args, format);
-            
             NSString *formatString =[[NSString alloc] initWithFormat:format arguments:args];
             NSString *printString = [NSString stringWithFormat:@"%@\n", formatString];
-            
             printf("%s", printString.UTF8String);
             va_end(args);
         }

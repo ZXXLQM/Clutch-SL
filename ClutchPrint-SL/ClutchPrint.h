@@ -54,6 +54,6 @@ typedef NS_ENUM(NSInteger, ClutchPrinterColor)
 //带颜色格式化输出（参数一为颜色参数）
 -(void)printColor:(ClutchPrinterColor)color format:(NSString *)format,...;
 
-
+//详细输出~
 - (void)printVerbose:(NSString *)format, ...;
 @end

@@ -36,6 +36,65 @@ typedef NSDictionary* (*MobileInstallationLookup)(NSDictionary *options);
 }
 
 
+#pragma mark - iOS7以下获取手机上安装的应用程序
+- (NSDictionary *)listApplicationsForiOS7AndLower {
+    MobileInstallationLookup mobileInstallationLookup;
+    void * MIHandle;
+    NSMutableDictionary *returnValue = [NSMutableDictionary new];
+    MIHandle = dlopen("/System/Library/PrivateFrameworks/MobileInstallation.framework/MobileInstallation", RTLD_NOW);
+    mobileInstallationLookup = NULL;
+    
+    if (MIHandle)
+    {
+        mobileInstallationLookup = dlsym(MIHandle,"MobileInstallationLookup");
+        if (mobileInstallationLookup)
+        {
+            
+            NSDictionary *installedApps;
+            NSDictionary* options = @{@"ApplicationType":@"User",
+                                      @"ReturnAttributes":@[@"CFBundleShortVersionString",
+                                                            @"CFBundleVersion",
+                                                            @"Path",
+                                                            @"CFBundleDisplayName",
+                                                            @"CFBundleExecutable",
+                                                            @"MinimumOSVersion"]};
+            
+            installedApps = mobileInstallationLookup(options);
+            
+            
+            for (NSString *bundleID in installedApps.allKeys)
+            {
+                NSDictionary *appI = installedApps[bundleID];
+                NSURL *bundleURL = [NSURL fileURLWithPath:appI[@"Path"]];
+                NSString *scinfo = [bundleURL.path stringByAppendingPathComponent:@"SC_Info"];
+                
+                BOOL isDirectory;
+                BOOL purchased = [[NSFileManager defaultManager]fileExistsAtPath:scinfo isDirectory:&isDirectory];
+                
+                if (purchased && isDirectory)
+                {
+                    NSString *name = appI[@"CFBundleDisplayName"];
+                    if (name == nil)
+                    {
+                        name = appI[@"CFBundleExecutable"];
+                    }
+                    
+                    NSDictionary *bundleInfo = @{@"BundleContainer":bundleURL.URLByDeletingLastPathComponent,
+                                                 @"BundleURL":bundleURL,
+                                                 @"DisplayName": name,
+                                                 @"BundleIdentifier": bundleID};
+                    ClutchApplication *app = [[ClutchApplication alloc] initWithBundleInfo:bundleInfo];
+                    returnValue[bundleID] = app;
+                    
+                    [self cacheBundle:bundleInfo];
+                }
+            }
+        }
+    }
+    [self writeToCache];
+    return returnValue;
+}
+
 #pragma mark - ios8.0以上版本获取已安装的软件
 -(NSDictionary *)listApplicationsForiOS8AndHigher{
     NSMutableDictionary *returnValue = [NSMutableDictionary new];

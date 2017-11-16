@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "ClutchCommands.h"
 #import "ClutchCommand.h"
+#import "ClutchApplicationsManager.h"
+#import "ClutchApplication.h"
 void testPrint(void);
 BOOL checkRootAndSysVersion(void);
+void listApps(void);
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        
         if (!checkRootAndSysVersion()){
             return 0;
         }
@@ -43,6 +45,7 @@ int main(int argc, char * argv[]) {
                     break;
                 }
                 switch (command.option) {
+                        //没有参数
                     case ClutchCommandOptionNone:
                     {
                         [cPrint print:@"%@",commands.helpString];
@@ -50,18 +53,21 @@ int main(int argc, char * argv[]) {
                        break;
                     case ClutchCommandOptionFrameworkDump:
                     {
-                        //暂时不写
+                        //暂时没写
                     }
                         break;
+                        //Clutch-SL -b[--binary-dump] <bundleid or num>
                     case ClutchCommandOptionDump:
                     case ClutchCommandOptionBinaryDump:
                     {
-                        //暂时不写
+                        //暂时没写
                     }
                         break;
+                        //Clutch -i[--print-installed]
                     case ClutchCommandOptionPrintInstalled:
                     {
                         //列出手机上安装的应用
+                        listApps();
                     }
                         break;
                     case ClutchCommandOptionClean:
@@ -88,10 +94,6 @@ int main(int argc, char * argv[]) {
                 }
             }
         }
-        
-        
-        [cPrint printColor:ClutchPrinterColorPink format:@"%@",arguments];
-        
         return 0;
     }
 }
@@ -121,3 +123,36 @@ void testPrint(void){
     //错误输出
     [[ClutchPrint sharedInstance] printError:@"%@",@"我是一个错误"];
 }
+#pragma mark - 列出已安装的应用程序
+
+void listApps(){
+    ClutchApplicationsManager *_manager = [[ClutchApplicationsManager alloc] init];
+    NSArray *installedApps = [_manager installedApps].allValues;
+    [[ClutchPrint sharedInstance] print:@"Installed apps:"];
+    NSUInteger count=0;
+    NSString *space;
+    for (ClutchApplication *_app in installedApps) {
+        count++;
+        if (count < 10) {
+            space = @"  ";
+        }else if (count < 100) {
+            space = @" ";
+        }
+        ClutchPrinterColor color;
+        if (count % 2 == 0) {
+            color = ClutchPrinterColorPurple;
+        } else {
+            color = ClutchPrinterColorPink;
+        }
+        //输出格式为：1:  DisplayName <com.bundleIdentifier>
+        [[ClutchPrint sharedInstance] printColor:color format:@"%d: %@%@ <%@>", count, space, _app.displayName, _app.bundleIdentifier];
+    }
+}
+
+
+
+
+
+
+
+

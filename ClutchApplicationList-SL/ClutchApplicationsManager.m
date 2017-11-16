@@ -2,8 +2,8 @@
 //  ClutchApplicationsManager.m
 //  Clutch-SL
 //
-//  Created by 曾祥翔 on 2017/11/15.
-//  Copyright © 2017年 曾祥翔. All rights reserved.
+//  Created by SweetLoser on 2017/11/15.
+//  Copyright © 2017年 SweetLoser. All rights reserved.
 //
 
 #import "ClutchApplicationsManager.h"

@@ -8,12 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		BF548FD61FBAC3B7000E2151 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF548FD51FBAC3B7000E2151 /* main.m */; };
+		BF548FFF1FBAEB17000E2151 /* ClutchPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = BF548FFE1FBAEB17000E2151 /* ClutchPrint.m */; };
+		BF5490011FBB10DC000E2151 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF5490001FBB10DC000E2151 /* Info.plist */; };
+		BF9F37641FBBE179008E9FC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9F37631FBBE16E008E9FC6 /* Foundation.framework */; };
+		BF9F37691FBC2493008E9FC6 /* ClutchCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9F37681FBC2493008E9FC6 /* ClutchCommands.m */; };
+		BF9F376C1FBC2657008E9FC6 /* ClutchCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9F376B1FBC2657008E9FC6 /* ClutchCommand.m */; };
+		BF9F37701FBC69F9008E9FC6 /* ClutchApplicationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9F376F1FBC69F9008E9FC6 /* ClutchApplicationsManager.m */; };
+		BFDD0ACD1FBD4F5400183135 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDD0ACC1FBD4F3B00183135 /* MobileCoreServices.framework */; };
+		BFDD0AD11FBD5E4D00183135 /* ClutchBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0AD01FBD5E4D00183135 /* ClutchBundle.m */; };
+		BFDD0AD41FBD5F9900183135 /* ClutchApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0AD31FBD5F9900183135 /* ClutchApplication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF548FC31FBAC3B7000E2151 /* Clutch-SL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clutch-SL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF548FD51FBAC3B7000E2151 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF548FFB1FBAC4BB000E2151 /* Clutch-SL.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Clutch-SL.entitlements"; sourceTree = "<group>"; };
+		BF548FFD1FBAEB17000E2151 /* ClutchPrint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchPrint.h; sourceTree = "<group>"; };
+		BF548FFE1FBAEB17000E2151 /* ClutchPrint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchPrint.m; sourceTree = "<group>"; };
+		BF5490001FBB10DC000E2151 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF5490031FBB165C000E2151 /* Move-And-Sign.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Move-And-Sign.sh"; sourceTree = "<group>"; };
+		BF9F37631FBBE16E008E9FC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BF9F37651FBC1DEE008E9FC6 /* Clutch-SL.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Clutch-SL.pch"; sourceTree = "<group>"; };
+		BF9F37671FBC2493008E9FC6 /* ClutchCommands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchCommands.h; sourceTree = "<group>"; };
+		BF9F37681FBC2493008E9FC6 /* ClutchCommands.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchCommands.m; sourceTree = "<group>"; };
+		BF9F376A1FBC2657008E9FC6 /* ClutchCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchCommand.h; sourceTree = "<group>"; };
+		BF9F376B1FBC2657008E9FC6 /* ClutchCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchCommand.m; sourceTree = "<group>"; };
+		BF9F376E1FBC69F9008E9FC6 /* ClutchApplicationsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchApplicationsManager.h; sourceTree = "<group>"; };
+		BF9F376F1FBC69F9008E9FC6 /* ClutchApplicationsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchApplicationsManager.m; sourceTree = "<group>"; };
+		BFDD0ACA1FBD3D6000183135 /* LSApplicationWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSApplicationWorkspace.h; sourceTree = "<group>"; };
+		BFDD0ACB1FBD3D6A00183135 /* LSApplicationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSApplicationProxy.h; sourceTree = "<group>"; };
+		BFDD0ACC1FBD4F3B00183135 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BFDD0ACF1FBD5E4D00183135 /* ClutchBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchBundle.h; sourceTree = "<group>"; };
+		BFDD0AD01FBD5E4D00183135 /* ClutchBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchBundle.m; sourceTree = "<group>"; };
+		BFDD0AD21FBD5F9900183135 /* ClutchApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchApplication.h; sourceTree = "<group>"; };
+		BFDD0AD31FBD5F9900183135 /* ClutchApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchApplication.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFDD0ACD1FBD4F5400183135 /* MobileCoreServices.framework in Frameworks */,
+				BF9F37641FBBE179008E9FC6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -30,6 +60,11 @@
 		BF548FBA1FBAC3B7000E2151 = {
 			isa = PBXGroup;
 			children = (
+				BFDD0AC91FBD3D2900183135 /* iOSPrivateAPI-SL */,
+				BF9F376D1FBC69B0008E9FC6 /* ClutchApplicationList-SL */,
+				BF9F37661FBC2466008E9FC6 /* ClutchCommands-SL */,
+				BF5490021FBB160A000E2151 /* Scripts-SL */,
+				BF548FFC1FBAEAD3000E2151 /* ClutchPrint-SL */,
 				BF548FC51FBAC3B7000E2151 /* Clutch-SL */,
 				BF548FC41FBAC3B7000E2151 /* Products */,
 				BF548FF81FBAC4BB000E2151 /* Frameworks */,
@@ -47,8 +82,10 @@
 		BF548FC51FBAC3B7000E2151 /* Clutch-SL */ = {
 			isa = PBXGroup;
 			children = (
+				BF5490001FBB10DC000E2151 /* Info.plist */,
 				BF548FFB1FBAC4BB000E2151 /* Clutch-SL.entitlements */,
 				BF548FD51FBAC3B7000E2151 /* main.m */,
+				BF9F37651FBC1DEE008E9FC6 /* Clutch-SL.pch */,
 			);
 			path = "Clutch-SL";
 			sourceTree = "<group>";
@@ -56,8 +93,68 @@
 		BF548FF81FBAC4BB000E2151 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFDD0ACC1FBD4F3B00183135 /* MobileCoreServices.framework */,
+				BF9F37631FBBE16E008E9FC6 /* Foundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF548FFC1FBAEAD3000E2151 /* ClutchPrint-SL */ = {
+			isa = PBXGroup;
+			children = (
+				BF548FFD1FBAEB17000E2151 /* ClutchPrint.h */,
+				BF548FFE1FBAEB17000E2151 /* ClutchPrint.m */,
+			);
+			path = "ClutchPrint-SL";
+			sourceTree = "<group>";
+		};
+		BF5490021FBB160A000E2151 /* Scripts-SL */ = {
+			isa = PBXGroup;
+			children = (
+				BF5490031FBB165C000E2151 /* Move-And-Sign.sh */,
+			);
+			path = "Scripts-SL";
+			sourceTree = "<group>";
+		};
+		BF9F37661FBC2466008E9FC6 /* ClutchCommands-SL */ = {
+			isa = PBXGroup;
+			children = (
+				BF9F376A1FBC2657008E9FC6 /* ClutchCommand.h */,
+				BF9F376B1FBC2657008E9FC6 /* ClutchCommand.m */,
+				BF9F37671FBC2493008E9FC6 /* ClutchCommands.h */,
+				BF9F37681FBC2493008E9FC6 /* ClutchCommands.m */,
+			);
+			path = "ClutchCommands-SL";
+			sourceTree = "<group>";
+		};
+		BF9F376D1FBC69B0008E9FC6 /* ClutchApplicationList-SL */ = {
+			isa = PBXGroup;
+			children = (
+				BFDD0ACE1FBD5E2100183135 /* ClutchBundle-SL */,
+				BFDD0AD21FBD5F9900183135 /* ClutchApplication.h */,
+				BFDD0AD31FBD5F9900183135 /* ClutchApplication.m */,
+				BF9F376E1FBC69F9008E9FC6 /* ClutchApplicationsManager.h */,
+				BF9F376F1FBC69F9008E9FC6 /* ClutchApplicationsManager.m */,
+			);
+			path = "ClutchApplicationList-SL";
+			sourceTree = "<group>";
+		};
+		BFDD0AC91FBD3D2900183135 /* iOSPrivateAPI-SL */ = {
+			isa = PBXGroup;
+			children = (
+				BFDD0ACB1FBD3D6A00183135 /* LSApplicationProxy.h */,
+				BFDD0ACA1FBD3D6000183135 /* LSApplicationWorkspace.h */,
+			);
+			path = "iOSPrivateAPI-SL";
+			sourceTree = "<group>";
+		};
+		BFDD0ACE1FBD5E2100183135 /* ClutchBundle-SL */ = {
+			isa = PBXGroup;
+			children = (
+				BFDD0ACF1FBD5E4D00183135 /* ClutchBundle.h */,
+				BFDD0AD01FBD5E4D00183135 /* ClutchBundle.m */,
+			);
+			path = "ClutchBundle-SL";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,6 +167,7 @@
 				BF548FBF1FBAC3B7000E2151 /* Sources */,
 				BF548FC01FBAC3B7000E2151 /* Frameworks */,
 				BF548FC11FBAC3B7000E2151 /* Resources */,
+				BF5490051FBB2465000E2151 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -87,7 +185,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0910;
-				ORGANIZATIONNAME = "曾祥翔";
+				ORGANIZATIONNAME = "SweetLoser";
 				TargetAttributes = {
 					BF548FC21FBAC3B7000E2151 = {
 						CreatedOnToolsVersion = 9.1;
@@ -123,17 +221,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5490011FBB10DC000E2151 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BF5490051FBB2465000E2151 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash -xv \"${PROJECT_DIR}/Scripts-SL/Move-And-Sign.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF548FBF1FBAC3B7000E2151 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFDD0AD11FBD5E4D00183135 /* ClutchBundle.m in Sources */,
+				BF9F37701FBC69F9008E9FC6 /* ClutchApplicationsManager.m in Sources */,
+				BF9F376C1FBC2657008E9FC6 /* ClutchCommand.m in Sources */,
+				BF548FFF1FBAEB17000E2151 /* ClutchPrint.m in Sources */,
+				BF9F37691FBC2493008E9FC6 /* ClutchCommands.m in Sources */,
 				BF548FD61FBAC3B7000E2151 /* main.m in Sources */,
+				BFDD0AD41FBD5F9900183135 /* ClutchApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,10 +368,13 @@
 		BF548FF01FBAC3B7000E2151 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Clutch-SL/Clutch-SL.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VX337297RV;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "${SRCROOT}/Clutch-SL/Clutch-SL.pch";
 				INFOPLIST_FILE = "Clutch-SL/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zxx.Clutch-SL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -261,10 +385,13 @@
 		BF548FF11FBAC3B7000E2151 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Clutch-SL/Clutch-SL.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VX337297RV;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "${SRCROOT}/Clutch-SL/Clutch-SL.pch";
 				INFOPLIST_FILE = "Clutch-SL/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zxx.Clutch-SL";
 				PRODUCT_NAME = "$(TARGET_NAME)";

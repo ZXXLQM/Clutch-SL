@@ -17,4 +17,6 @@
 @property (readonly) NSArray *frameworks;
 @property (readonly) NSArray *watchOSApps;
 
+- (BOOL)dumpToDirectoryURL:(NSURL *)directoryURL onlyBinaries:(BOOL)_onlyBinaries;
+
 @end

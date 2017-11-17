@@ -7,7 +7,7 @@
 //
 
 #import "ClutchBundle.h"
-
+#import "ClutchBinary.h"
 
 @implementation ClutchBundle
 
@@ -19,6 +19,22 @@
         _dumpQueue = [NSOperationQueue new];
     }
     return self;
+}
+
+- (void)dumpToDirectoryURL:(NSURL *)directoryURL
+{
+    if (_dumpQueue.operationCount)
+        [_dumpQueue cancelAllOperations];
+}
+
+-(void)prepareForDump{
+    _executable = [[ClutchBinary alloc] initWithBundle:self];
+    [[ClutchPrint sharedInstance] printVerbose:@"Preparing to dump %@", _executable];
+    [[ClutchPrint sharedInstance] printVerbose:@"Path: %@", self.executable.binaryPath];
+    
+    NSDictionary *ownershipInfo = @{NSFileOwnerAccountName:@"mobile", NSFileGroupOwnerAccountName:@"mobile"};
+    
+    [[NSFileManager defaultManager] setAttributes:ownershipInfo ofItemAtPath:self.executable.binaryPath error:nil];
 }
 
 @end

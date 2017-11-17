@@ -17,6 +17,13 @@
 		BFDD0ACD1FBD4F5400183135 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDD0ACC1FBD4F3B00183135 /* MobileCoreServices.framework */; };
 		BFDD0AD11FBD5E4D00183135 /* ClutchBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0AD01FBD5E4D00183135 /* ClutchBundle.m */; };
 		BFDD0AD41FBD5F9900183135 /* ClutchApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0AD31FBD5F9900183135 /* ClutchApplication.m */; };
+		BFDD0ADC1FBE8BB700183135 /* ClutchBinary.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0ADB1FBE8BB700183135 /* ClutchBinary.m */; };
+		BFDD0AE01FBEB71500183135 /* ClutchBundleDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0ADF1FBEB71500183135 /* ClutchBundleDumpOperation.m */; };
+		BFDD0AE71FBEBE8800183135 /* NSData+Reading.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0AE61FBEBE8800183135 /* NSData+Reading.m */; };
+		BFDD0AED1FBECD2200183135 /* optool-headers.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0AEC1FBECD2200183135 /* optool-headers.m */; };
+		BFDD0AF01FBED35200183135 /* NSFileHandle+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0AEF1FBED35200183135 /* NSFileHandle+Private.m */; };
+		BFDD0AF31FBEE0D300183135 /* ClutchZipOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0AF21FBEE0D300183135 /* ClutchZipOperation.m */; };
+		BFDD0AF61FBEE3CF00183135 /* ClutchFinalizeDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDD0AF51FBEE3CF00183135 /* ClutchFinalizeDumpOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +49,23 @@
 		BFDD0AD01FBD5E4D00183135 /* ClutchBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchBundle.m; sourceTree = "<group>"; };
 		BFDD0AD21FBD5F9900183135 /* ClutchApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchApplication.h; sourceTree = "<group>"; };
 		BFDD0AD31FBD5F9900183135 /* ClutchApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchApplication.m; sourceTree = "<group>"; };
+		BFDD0ADA1FBE8BB700183135 /* ClutchBinary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchBinary.h; sourceTree = "<group>"; };
+		BFDD0ADB1FBE8BB700183135 /* ClutchBinary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchBinary.m; sourceTree = "<group>"; };
+		BFDD0ADE1FBEB71500183135 /* ClutchBundleDumpOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchBundleDumpOperation.h; sourceTree = "<group>"; };
+		BFDD0ADF1FBEB71500183135 /* ClutchBundleDumpOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchBundleDumpOperation.m; sourceTree = "<group>"; };
+		BFDD0AE51FBEBE8800183135 /* NSData+Reading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Reading.h"; sourceTree = "<group>"; };
+		BFDD0AE61FBEBE8800183135 /* NSData+Reading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Reading.m"; sourceTree = "<group>"; };
+		BFDD0AE81FBEC6B100183135 /* optool-defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-defines.h"; sourceTree = "<group>"; };
+		BFDD0AE91FBEC8B300183135 /* optool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = optool.h; sourceTree = "<group>"; };
+		BFDD0AEA1FBEC92900183135 /* optool-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-headers.h"; sourceTree = "<group>"; };
+		BFDD0AEB1FBEC93B00183135 /* optool-operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-operations.h"; sourceTree = "<group>"; };
+		BFDD0AEC1FBECD2200183135 /* optool-headers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "optool-headers.m"; sourceTree = "<group>"; };
+		BFDD0AEE1FBED35200183135 /* NSFileHandle+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+Private.h"; sourceTree = "<group>"; };
+		BFDD0AEF1FBED35200183135 /* NSFileHandle+Private.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+Private.m"; sourceTree = "<group>"; };
+		BFDD0AF11FBEE0D300183135 /* ClutchZipOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchZipOperation.h; sourceTree = "<group>"; };
+		BFDD0AF21FBEE0D300183135 /* ClutchZipOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchZipOperation.m; sourceTree = "<group>"; };
+		BFDD0AF41FBEE3CF00183135 /* ClutchFinalizeDumpOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClutchFinalizeDumpOperation.h; sourceTree = "<group>"; };
+		BFDD0AF51FBEE3CF00183135 /* ClutchFinalizeDumpOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClutchFinalizeDumpOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +84,8 @@
 		BF548FBA1FBAC3B7000E2151 = {
 			isa = PBXGroup;
 			children = (
+				BFDD0AE11FBEBDAD00183135 /* ClutchOptool-SL */,
+				BFDD0ADD1FBEB6E600183135 /* ClutchOptions-SL */,
 				BFDD0AC91FBD3D2900183135 /* iOSPrivateAPI-SL */,
 				BF9F376D1FBC69B0008E9FC6 /* ClutchApplicationList-SL */,
 				BF9F37661FBC2466008E9FC6 /* ClutchCommands-SL */,
@@ -153,8 +179,39 @@
 			children = (
 				BFDD0ACF1FBD5E4D00183135 /* ClutchBundle.h */,
 				BFDD0AD01FBD5E4D00183135 /* ClutchBundle.m */,
+				BFDD0ADA1FBE8BB700183135 /* ClutchBinary.h */,
+				BFDD0ADB1FBE8BB700183135 /* ClutchBinary.m */,
+				BFDD0AEE1FBED35200183135 /* NSFileHandle+Private.h */,
+				BFDD0AEF1FBED35200183135 /* NSFileHandle+Private.m */,
 			);
 			path = "ClutchBundle-SL";
+			sourceTree = "<group>";
+		};
+		BFDD0ADD1FBEB6E600183135 /* ClutchOptions-SL */ = {
+			isa = PBXGroup;
+			children = (
+				BFDD0ADE1FBEB71500183135 /* ClutchBundleDumpOperation.h */,
+				BFDD0ADF1FBEB71500183135 /* ClutchBundleDumpOperation.m */,
+				BFDD0AF11FBEE0D300183135 /* ClutchZipOperation.h */,
+				BFDD0AF21FBEE0D300183135 /* ClutchZipOperation.m */,
+				BFDD0AF41FBEE3CF00183135 /* ClutchFinalizeDumpOperation.h */,
+				BFDD0AF51FBEE3CF00183135 /* ClutchFinalizeDumpOperation.m */,
+			);
+			path = "ClutchOptions-SL";
+			sourceTree = "<group>";
+		};
+		BFDD0AE11FBEBDAD00183135 /* ClutchOptool-SL */ = {
+			isa = PBXGroup;
+			children = (
+				BFDD0AE91FBEC8B300183135 /* optool.h */,
+				BFDD0AEA1FBEC92900183135 /* optool-headers.h */,
+				BFDD0AEC1FBECD2200183135 /* optool-headers.m */,
+				BFDD0AEB1FBEC93B00183135 /* optool-operations.h */,
+				BFDD0AE81FBEC6B100183135 /* optool-defines.h */,
+				BFDD0AE51FBEBE8800183135 /* NSData+Reading.h */,
+				BFDD0AE61FBEBE8800183135 /* NSData+Reading.m */,
+			);
+			path = "ClutchOptool-SL";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0910;
-				ORGANIZATIONNAME = "SweetLoser";
+				ORGANIZATIONNAME = SweetLoser;
 				TargetAttributes = {
 					BF548FC21FBAC3B7000E2151 = {
 						CreatedOnToolsVersion = 9.1;
@@ -249,11 +306,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFDD0AD11FBD5E4D00183135 /* ClutchBundle.m in Sources */,
+				BFDD0ADC1FBE8BB700183135 /* ClutchBinary.m in Sources */,
 				BF9F37701FBC69F9008E9FC6 /* ClutchApplicationsManager.m in Sources */,
 				BF9F376C1FBC2657008E9FC6 /* ClutchCommand.m in Sources */,
+				BFDD0AF31FBEE0D300183135 /* ClutchZipOperation.m in Sources */,
+				BFDD0AF01FBED35200183135 /* NSFileHandle+Private.m in Sources */,
 				BF548FFF1FBAEB17000E2151 /* ClutchPrint.m in Sources */,
+				BFDD0AE71FBEBE8800183135 /* NSData+Reading.m in Sources */,
 				BF9F37691FBC2493008E9FC6 /* ClutchCommands.m in Sources */,
+				BFDD0AED1FBECD2200183135 /* optool-headers.m in Sources */,
 				BF548FD61FBAC3B7000E2151 /* main.m in Sources */,
+				BFDD0AE01FBEB71500183135 /* ClutchBundleDumpOperation.m in Sources */,
+				BFDD0AF61FBEE3CF00183135 /* ClutchFinalizeDumpOperation.m in Sources */,
 				BFDD0AD41FBD5F9900183135 /* ClutchApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

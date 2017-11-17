@@ -142,7 +142,15 @@ typedef NSDictionary* (*MobileInstallationLookup)(NSDictionary *options);
 }
 
 -(NSDictionary *)_allCachedApplications{
-    return nil;
+    if ([_cacheApps count] == 0) {
+        return [self _allApplications];
+    }
+    NSMutableDictionary *returnValue = [NSMutableDictionary new];
+    for (NSDictionary *bundleInfo in _cacheApps) {
+        ClutchApplication *app = [[ClutchApplication alloc] initWithBundleInfo:bundleInfo];
+        [returnValue setObject:app forKey:bundleInfo[@"BundleIdentifier"]];
+    }
+    return returnValue;
 }
 
 

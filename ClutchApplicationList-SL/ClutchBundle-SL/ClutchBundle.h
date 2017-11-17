@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class ClutchBinary;
+
 @interface ClutchBundle : NSBundle
 {
     @public
@@ -21,7 +23,10 @@
 @property (readonly) NSString *zipPrefix;
 @property (readonly) NSURL *enumURL;
 @property (readonly) NSURL *bundleContainerURL;
-
 @property (readonly) NSString* displayName;
+@property (readonly) ClutchBinary *executable;
+
 - (instancetype)initWithBundleInfo:(NSDictionary *)info;
+- (void)dumpToDirectoryURL:(NSURL *)directoryURL;
+- (void)prepareForDump;
 @end

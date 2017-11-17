@@ -17,15 +17,18 @@ void listApps(void);
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         if (!checkRootAndSysVersion()){
-            return 0;
+            //return 0;
         }
+        
+        listApps();
+        
         ClutchPrint *cPrint = [ClutchPrint sharedInstance];
         [cPrint setColorLevel:ClutchPrinterColorLevelFull];
         [cPrint setVerboseLevel:ClutchPrinterVerboseLevelNone];
         
         //获取进程参数（`NSProcessInfo` 还可以获取其他的进程信息。例如进程标识符，进程名，进程环境变量等）
         NSArray *arguments = [[NSProcessInfo processInfo] arguments];
-        
+        arguments = @[arguments[0],@"-d",@"1"];
         ClutchCommands *commands = [[ClutchCommands alloc] initWithArguments:arguments];
         
         if (commands.commands) {
@@ -60,7 +63,40 @@ int main(int argc, char * argv[]) {
                     case ClutchCommandOptionDump:
                     case ClutchCommandOptionBinaryDump:
                     {
-                        //暂时没写
+                        //dump
+                        NSDictionary *_installedApps = [[ClutchApplicationsManager new] _allCachedApplications];
+                        for (NSString *selection in commands.values) {
+                            int key;
+                            ClutchApplication *_selectedApp = nil;
+                            if (!(key=selection.intValue)) {
+                                [[ClutchPrint sharedInstance] printDeveloper:@"using bundle identifier"];
+                                _selectedApp = _installedApps[selection];
+                                if (_selectedApp == nil) {
+                                    [[ClutchPrint sharedInstance] print:@"Couldn't find installed app with bundle identifier: %@",selection];
+                                    return 1;
+                                }
+                            }else{
+                                [[ClutchPrint sharedInstance] printDeveloper:@"using number"];
+                                NSArray *_installedArray =_installedApps.allValues;
+                                
+                                //key是以1开始的
+                                _selectedApp = [_installedArray objectAtIndex:key-1];
+                            }
+                            
+                            if (_selectedApp == nil) {
+                                [[ClutchPrint sharedInstance] print:@"Couldn't find installed app"];
+                                return 1;
+                            }
+                            
+                            [[ClutchPrint sharedInstance] printVerbose:@"Now dumping %@", _selectedApp.bundleIdentifier];
+                            //开始解密app
+                            
+                            if (![_selectedApp dumpToDirectoryURL:nil onlyBinaries:NO]) {
+                                
+                            }
+                            
+                            
+                        }
                     }
                         break;
                         //Clutch -i[--print-installed]
@@ -123,8 +159,8 @@ void testPrint(void){
     //错误输出
     [[ClutchPrint sharedInstance] printError:@"%@",@"我是一个错误"];
 }
-#pragma mark - 列出已安装的应用程序
 
+#pragma mark - 列出已安装的应用程序
 void listApps(){
     ClutchApplicationsManager *_manager = [[ClutchApplicationsManager alloc] init];
     NSArray *installedApps = [_manager installedApps].allValues;
